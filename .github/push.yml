@@ -1,0 +1,20 @@
+name: Deploy de la pagina 
+on: 
+  push: 
+    branches: 
+      - main 
+
+jobs: 
+Deploy-page:
+  runs-on: ubuntu-latest
+  stpes: 
+    - name: Checkout
+      uses: actions/checkout@v2.3.1
+
+    - name: Deploy 
+      uses: JamesIves/github-page-deploy-action@4.1.4
+      with: 
+        branch: gh-pages # the branch the action should deploy to.
+        folder: . # the folder the action should deploy.
+
+
